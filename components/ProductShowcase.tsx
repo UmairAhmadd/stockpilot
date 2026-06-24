@@ -92,8 +92,8 @@ export default function ProductShowcase() {
             height={929}
             priority
             draggable={false}
-            sizes="(max-width: 768px) 80vw, 520px"
-            className="pointer-events-none h-auto w-full max-w-[520px] select-none brightness-[1.22] contrast-[1.12] saturate-[1.05] drop-shadow-[0_28px_40px_rgba(0,0,0,0.65)]"
+            sizes="(max-width: 640px) 50vw, 520px"
+            className="pointer-events-none h-auto w-full max-w-[200px] select-none brightness-[1.22] contrast-[1.12] saturate-[1.05] drop-shadow-[0_28px_40px_rgba(0,0,0,0.65)] sm:max-w-[520px]"
           />
         </motion.div>
       </motion.div>

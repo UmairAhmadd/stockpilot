@@ -18,7 +18,7 @@ export default function InventoryValueByCategory({ data }: Props) {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 1.4 }}
-      className="flex flex-col rounded-3xl bg-panel p-6 shadow-panel"
+      className="flex flex-col rounded-3xl bg-panel p-4 shadow-panel sm:p-6"
     >
       <div className="flex items-center justify-between">
         <h2 className="font-display text-lg font-bold tracking-tight text-white">
@@ -32,18 +32,36 @@ export default function InventoryValueByCategory({ data }: Props) {
         </button>
       </div>
 
-      <div className="mt-7 flex flex-1 flex-col justify-center gap-4">
+      <div className="mt-5 flex flex-1 flex-col justify-center gap-3 sm:mt-7 sm:gap-4">
         {inventoryValueByCategory.map((c) => (
-          <div key={c.name} className="grid grid-cols-[72px_1fr] items-center gap-3 sm:grid-cols-[88px_1fr]">
-            <p className="truncate text-sm text-white/70">{c.name}</p>
-            <div className="relative h-7 overflow-hidden rounded-lg bg-white/[0.06]">
-              <div
-                className="flex h-full items-center justify-end rounded-lg bg-gradient-to-r from-lime-deep to-lime pr-2.5 transition-[width] duration-700 ease-out"
-                style={{ width: `${(c.value / max) * 100}%` }}
-              >
-                <span className="text-xs font-semibold text-ink tnum">
+          <div key={c.name}>
+            {/* Mobile: label + value above a full-width bar */}
+            <div className="sm:hidden">
+              <div className="mb-1 flex items-center justify-between">
+                <p className="text-xs text-white/70">{c.name}</p>
+                <span className="text-xs font-semibold text-white/60 tnum">
                   {Math.round(c.value / 1000)}K
                 </span>
+              </div>
+              <div className="h-4 overflow-hidden rounded-md bg-white/[0.06]">
+                <div
+                  className="h-full rounded-md bg-gradient-to-r from-lime-deep to-lime transition-[width] duration-700 ease-out"
+                  style={{ width: `${(c.value / max) * 100}%` }}
+                />
+              </div>
+            </div>
+            {/* sm+: label column beside bar */}
+            <div className="hidden items-center gap-3 sm:grid sm:grid-cols-[88px_1fr]">
+              <p className="truncate text-sm text-white/70">{c.name}</p>
+              <div className="relative h-7 overflow-hidden rounded-lg bg-white/[0.06]">
+                <div
+                  className="flex h-full items-center justify-end rounded-lg bg-gradient-to-r from-lime-deep to-lime pr-2.5 transition-[width] duration-700 ease-out"
+                  style={{ width: `${(c.value / max) * 100}%` }}
+                >
+                  <span className="text-xs font-semibold text-ink tnum">
+                    {Math.round(c.value / 1000)}K
+                  </span>
+                </div>
               </div>
             </div>
           </div>

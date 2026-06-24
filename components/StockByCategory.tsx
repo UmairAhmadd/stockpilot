@@ -31,10 +31,10 @@ export default function StockByCategory({ data }: Props) {
         </button>
       </div>
 
-      <div className="mt-8 flex flex-1 items-end gap-1.5 sm:gap-5">
+      <div className="mt-5 flex flex-1 items-end gap-1 sm:mt-8 sm:gap-5">
         {stockByCategory.map((c) => (
-          <div key={c.name} className="flex min-w-0 flex-1 flex-col items-center gap-3">
-            <div className="flex h-44 w-full items-end justify-center">
+          <div key={c.name} className="flex min-w-0 flex-1 flex-col items-center gap-2 sm:gap-3">
+            <div className="flex h-32 w-full items-end justify-center sm:h-44">
               <div
                 className="w-full max-w-[68px] rounded-t-xl bg-ink/85 transition-[height] duration-700 ease-out"
                 style={{ height: `${c.percent}%` }}

@@ -61,7 +61,7 @@ export default function TopSellingProduct({ product }: Props) {
 
       <div className="relative grid items-center gap-4 p-4 sm:grid-cols-2 sm:gap-5 sm:p-5">
         {/* ── stage (50%) ── */}
-        <div className="relative flex min-h-[210px] items-center justify-center pt-5 sm:min-h-[270px] sm:pt-2">
+        <div className="relative flex min-h-[160px] items-center justify-center pt-10 sm:min-h-[270px] sm:pt-2">
           <ProductShowcase />
         </div>
 
@@ -71,16 +71,16 @@ export default function TopSellingProduct({ product }: Props) {
           <h2 className="mt-1 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-bold leading-tight tracking-tight text-white">
             {p.name}
           </h2>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/55">
+          <p className="mt-2 hidden max-w-sm text-sm leading-relaxed text-white/55 sm:block">
             Your best-performing SKU this quarter — leading both volume and margin
             across the Electronics category.
           </p>
 
-          <div className="mt-5 grid grid-cols-2 gap-3">
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-3">
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="min-w-0 rounded-2xl border border-white/[0.07] bg-white/[0.04] p-3.5"
+                className="min-w-0 rounded-2xl border border-white/[0.07] bg-white/[0.04] p-2.5 sm:p-3.5"
               >
                 <div className="flex items-center gap-1.5 text-white/45">
                   <Icon name={s.icon} size={15} />
@@ -93,7 +93,7 @@ export default function TopSellingProduct({ product }: Props) {
             ))}
 
             {/* growth — brand-accent emphasis */}
-            <div className="min-w-0 rounded-2xl bg-lime p-3.5 text-ink">
+            <div className="min-w-0 rounded-2xl bg-lime p-2.5 text-ink sm:p-3.5">
               <div className="flex items-center gap-1.5 opacity-70">
                 <Icon name="trendUp" size={15} />
                 <span className="text-xs font-semibold">Growth</span>
