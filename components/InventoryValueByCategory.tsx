@@ -34,7 +34,7 @@ export default function InventoryValueByCategory({ data }: Props) {
 
       <div className="mt-7 flex flex-1 flex-col justify-center gap-4">
         {inventoryValueByCategory.map((c) => (
-          <div key={c.name} className="grid grid-cols-[88px_1fr] items-center gap-3">
+          <div key={c.name} className="grid grid-cols-[72px_1fr] items-center gap-3 sm:grid-cols-[88px_1fr]">
             <p className="truncate text-sm text-white/70">{c.name}</p>
             <div className="relative h-7 overflow-hidden rounded-lg bg-white/[0.06]">
               <div

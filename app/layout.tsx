@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${jakarta.variable} ${grotesk.variable} ${mono.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="overflow-x-hidden font-sans">{children}</body>
     </html>
   )
 }

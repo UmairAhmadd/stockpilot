@@ -21,6 +21,7 @@ export default async function ProductsPage() {
         <EmptyState />
       ) : (
         <div className="overflow-hidden rounded-3xl bg-card shadow-card">
+          <div className="overflow-x-auto">
           <table className="w-full min-w-[700px]">
             <thead>
               <tr className="border-b border-line bg-canvas/60">
@@ -60,6 +61,7 @@ export default async function ProductsPage() {
               })}
             </tbody>
           </table>
+          </div>
         </div>
       )}
     </PageLayout>

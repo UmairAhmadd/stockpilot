@@ -24,7 +24,7 @@ export default function Sidebar() {
         <Brand />
         <button
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-xl border border-line text-ink"
+          className="grid h-11 w-11 place-items-center rounded-xl border border-line text-ink"
           aria-label="Toggle navigation"
           aria-expanded={open}
         >

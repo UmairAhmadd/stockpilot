@@ -38,7 +38,7 @@ export default function DashboardClient({ metrics, topProduct, stockByCategory, 
               variants={group(0.4)}
               initial="hidden"
               animate="show"
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 min-[480px]:gap-4"
             >
               {pick(metrics, ['value', 'items', 'low', 'out']).map((m) => (
                 <StatCard key={m.id} metric={m} compact />
