@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Icon from './Icon'
+import NotificationBell from './NotificationBell'
 import { fadeDown } from '@/lib/motion'
 
 export default function Header({ title = 'Dashboard' }: { title?: string }) {
@@ -32,13 +33,7 @@ export default function Header({ title = 'Dashboard' }: { title?: string }) {
             />
           </label>
 
-          <button
-            className="relative grid h-11 w-11 place-items-center rounded-2xl bg-card text-ink shadow-card"
-            aria-label="Notifications"
-          >
-            <Icon name="bell" size={18} />
-            <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-lime-deep ring-2 ring-card" />
-          </button>
+          <NotificationBell />
 
           <div className="flex items-center gap-2 rounded-2xl bg-card px-2.5 py-1.5 shadow-card">
             <div className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-ink text-[11px] font-semibold text-lime">
